@@ -18,6 +18,7 @@ let products = [
   });
   return newProduct
 }
+// new comment
 
 const printAll = (products) => {
   products.forEach(product => {
