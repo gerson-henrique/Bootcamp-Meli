@@ -11,7 +11,7 @@ let products = [
   { name: 'Monitor', price: 200, quantity: 3, colors: [] },
   ];
 
-  const idSet =  (array) =>  {
+  const idSet =  (products) =>  {
     newProduct = products.map((product, id) => {
       product.id = id+1;
         return product
@@ -36,8 +36,40 @@ const printAllBlack = (products) => {
   });
 }
 
-const printAllBlack = (products) => {
+const printAllColors = (products) => {
   products.forEach((product) => {
   if (product.colors.length === 0)console.log(product.name);
   });
+}
+
+
+const addProduct = (products, newProduct) => {
+  products.push(newProduct);
+}
+
+const removeStockLess = (products) => {
+ const newArray = products.filter((product) => { product.quantity >= 0})
+return newArray; 
+}
+
+const sumAll = (products) => {
+  let quantity = 0; 
+  products.forEach((product) => {
+    quantity += product.quantity; 
+  })
+  console.log(quantity);
+}
+
+sumAll(products);
+
+const upperValue = (products,value) => {
+  products.forEach((product) => {
+    if (product.value >= value ) console.log(product.name);
+  } )
+}
+
+const onlyO = (products) => {
+  products.forEach((product) => {
+    if (product.name.includes('o') ) console.log(product.name);
+  } )
 }
