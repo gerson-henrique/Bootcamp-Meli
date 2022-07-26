@@ -1,7 +1,7 @@
 const express = require("express");
-const productRouter = require("./routers/router");
+const userRouter = require("./routers/router");
 
 app.use(express.json());
-app.use("/api/products", productRouter);
+app.use("/user", userRouter);
 
 app.listen(port, () => console.log(` listening on port ${port}!`));

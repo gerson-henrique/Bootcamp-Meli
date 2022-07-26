@@ -3,7 +3,7 @@ var router = express.Router();
 let api = require("./users");
 
 app.get("/", (req, res) => res.json(api));
-app.get("/:id", (req, res) => res.json(api.find((procut)=> product.id === req.params.id)));
+app.get("/:id", (req, res) => res.json(api.find((user)=> user.id === req.params.id)));
 
 
 router.post("/", (req, res) => {
@@ -18,7 +18,7 @@ router.put("/:id", (req, res) => {
   const { id } = req.params;
   api.forEach((product, index) => {
     if (product.id === id) {
-      api[index] = payload;
+      api[index] = user;
     }
   });
   res.status(201).end();

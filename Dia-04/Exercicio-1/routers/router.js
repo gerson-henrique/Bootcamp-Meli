@@ -3,7 +3,7 @@ var router = express.Router();
 let api = require("./products");
 
 app.get("/", (req, res) => res.json(api));
-app.get("/:id", (req, res) => res.json(api.find((procut)=> product.id === req.params.id)));
+app.get("/:id", (req, res) => res.json(api.find((product)=> product.id === req.params.id)));
 
 
 router.post("/", (req, res) => {
@@ -13,6 +13,7 @@ router.post("/", (req, res) => {
   });
   res.status(201).send(products);
 });
+
 router.put("/:id", (req, res) => {
   const { payload } = req.body;
   const { id } = req.params;
